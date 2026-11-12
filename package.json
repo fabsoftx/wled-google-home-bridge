@@ -4,6 +4,24 @@
   "description": "Self-hosted WLED webhook relay and native Google Smart Home Cloud-to-Cloud bridge",
   "type": "module",
   "license": "MIT",
+  "author": {
+    "name": "Idris Fabiyi Snr",
+    "email": "idris@thefabsgroup.co.uk",
+    "url": "https://fabiyi.com"
+  },
+  "keywords": [
+    "wled",
+    "google-home",
+    "google-smart-home",
+    "esp32",
+    "smart-home",
+    "iot",
+    "cloudflared",
+    "webhook",
+    "led-strip",
+    "fastify",
+    "typescript"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fabsoftx/wled-google-home-bridge.git"

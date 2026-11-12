@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 500" width="980" height="500" role="img" aria-label="WLED Google Home Bridge System Architecture">
+  <defs>
+    <linearGradient id="ledStrip" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff5f56"/>
+      <stop offset="25%" stop-color="#ffbd2e"/>
+      <stop offset="50%" stop-color="#27c93f"/>
+      <stop offset="75%" stop-color="#388bfd"/>
+      <stop offset="100%" stop-color="#a371f7"/>
+    </linearGradient>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#58a6ff"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#f0883e"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#3fb950"/>
+    </marker>
+  </defs>
+
+  <style>
+    .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .mono { font-family: ui-monospace, SFMono-Regular, SFMono, Menlo, Consolas, "Liberation Mono", monospace; }
+  </style>
+
+  <!-- Canvas -->
+  <rect x="1" y="1" width="978" height="498" rx="14" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- Header -->
+  <text x="28" y="35" class="sans" font-size="16" font-weight="700" fill="#f0f6fc">System Architecture — WLED Google Home Bridge</text>
+  <text x="28" y="54" class="sans" font-size="12" fill="#8b949e">Zero inbound router ports · Outbound Cloudflare Tunnel · Embedded OAuth 2.0 &amp; Multi-Device REST Gateway</text>
+
+  <!-- Zone 1: External Callers -->
+  <rect x="28" y="74" width="205" height="370" rx="12" fill="#161b22" fill-opacity="0.45" stroke="#388bfd" stroke-opacity="0.45" stroke-dasharray="5 4"/>
+  <text x="130.5" y="97" text-anchor="middle" class="sans" font-size="10.5" font-weight="700" letter-spacing="1" fill="#58a6ff">EXTERNAL CALLERS</text>
+
+  <!-- Card 1A: Google Home -->
+  <rect x="42" y="114" width="177" height="94" rx="8" fill="#161b22" stroke="#4285f4" stroke-width="1.2"/>
+  <text x="54" y="137" class="sans" font-size="12.5" font-weight="700" fill="#f0f6fc">Google Home Ecosystem</text>
+  <text x="54" y="155" class="sans" font-size="11" fill="#8b949e">Voice · Home App · Nest Hub</text>
+  <text x="54" y="176" class="sans" font-size="10.5" fill="#79c0ff">Cloud-to-Cloud OAuth 2.0</text>
+  <text x="54" y="193" class="mono" font-size="10" fill="#8b949e">SYNC · QUERY · EXECUTE</text>
+
+  <!-- Card 1B: Webhooks -->
+  <rect x="42" y="224" width="177" height="88" rx="8" fill="#161b22" stroke="#a371f7" stroke-width="1.2"/>
+  <text x="54" y="248" class="sans" font-size="12.5" font-weight="700" fill="#f0f6fc">Webhooks &amp; Automation</text>
+  <text x="54" y="266" class="sans" font-size="11" fill="#8b949e">IFTTT · Scripts · Shortcuts</text>
+  <text x="54" y="288" class="mono" font-size="10" fill="#d2a8ff">x-relay-token / Bearer</text>
+
+  <!-- Card 1C: Dashboards -->
+  <rect x="42" y="328" width="177" height="96" rx="8" fill="#161b22" stroke="#3fb950" stroke-width="1.2"/>
+  <text x="54" y="352" class="sans" font-size="12.5" font-weight="700" fill="#f0f6fc">Custom Dashboards</text>
+  <text x="54" y="370" class="sans" font-size="11" fill="#8b949e">Web / Mobile Control UI</text>
+  <text x="54" y="391" class="mono" font-size="10" fill="#7ee787">GET /api/v1/devices</text>
+  <text x="54" y="408" class="sans" font-size="10" fill="#8b949e">Auto-discovery &amp; live state</text>
+
+  <!-- Arrows: Callers -> Cloudflare -->
+  <path d="M 219 161 L 256 161 L 256 268 L 298 268" fill="none" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+  <path d="M 219 268 L 298 268" fill="none" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+  <path d="M 219 376 L 256 376 L 256 268" fill="none" stroke="#58a6ff" stroke-width="1.5"/>
+  <rect x="240" y="232" width="46" height="18" rx="4" fill="#0d1117"/>
+  <text x="263" y="245" text-anchor="middle" class="mono" font-size="9.5" fill="#79c0ff">HTTPS</text>
+
+  <!-- Zone 2: Public Edge -->
+  <rect x="288" y="74" width="154" height="370" rx="12" fill="#161b22" fill-opacity="0.45" stroke="#f0883e" stroke-opacity="0.5" stroke-dasharray="5 4"/>
+  <text x="365" y="97" text-anchor="middle" class="sans" font-size="10.5" font-weight="700" letter-spacing="1" fill="#f0883e">PUBLIC EDGE</text>
+
+  <!-- Card 2: Cloudflare -->
+  <rect x="301" y="168" width="128" height="196" rx="10" fill="#161b22" stroke="#f0883e" stroke-width="1.4"/>
+  <text x="365" y="196" text-anchor="middle" class="sans" font-size="13.5" font-weight="700" fill="#f0f6fc">Cloudflare</text>
+  <text x="365" y="214" text-anchor="middle" class="sans" font-size="11.5" font-weight="600" fill="#f0883e">Zero Trust Edge</text>
+  <line x1="315" y1="227" x2="415" y2="227" stroke="#30363d" stroke-width="1"/>
+  <text x="365" y="248" text-anchor="middle" class="sans" font-size="11" fill="#c9d1d9">TLS termination</text>
+  <text x="365" y="268" text-anchor="middle" class="sans" font-size="11" fill="#c9d1d9">Hides home WAN IP</text>
+  <text x="365" y="288" text-anchor="middle" class="sans" font-size="11" fill="#c9d1d9">Forwards cf-ray &amp;</text>
+  <text x="365" y="304" text-anchor="middle" class="sans" font-size="11" fill="#c9d1d9">client IP headers</text>
+  <rect x="311" y="322" width="108" height="24" rx="5" fill="#0d1117" stroke="#30363d"/>
+  <text x="365" y="338" text-anchor="middle" class="mono" font-size="9.5" fill="#ffa657">wled.example.com</text>
+
+  <!-- Zone 3: Private Home LAN -->
+  <rect x="466" y="74" width="486" height="370" rx="12" fill="#0f1713" fill-opacity="0.7" stroke="#3fb950" stroke-opacity="0.55" stroke-width="1.3"/>
+  <text x="709" y="97" text-anchor="middle" class="sans" font-size="10.5" font-weight="700" letter-spacing="1" fill="#3fb950">PRIVATE HOME LAN — NO ROUTER PORT FORWARDING</text>
+
+  <!-- Arrow: Outbound Tunnel -->
+  <line x1="484" y1="268" x2="432" y2="268" stroke="#f0883e" stroke-width="1.8" marker-end="url(#arrowOrange)" marker-start="url(#arrowOrange)"/>
+  <rect x="436" y="226" width="44" height="30" rx="4" fill="#0d1117"/>
+  <text x="458" y="239" text-anchor="middle" class="sans" font-size="9" font-weight="600" fill="#ffa657">cloudflared</text>
+  <text x="458" y="251" text-anchor="middle" class="mono" font-size="8.5" fill="#8b949e">:3080</text>
+
+  <!-- Card 3: Bridge Microservice -->
+  <rect x="486" y="114" width="244" height="312" rx="10" fill="#161b22" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="608" y="137" text-anchor="middle" class="sans" font-size="13" font-weight="700" fill="#f0f6fc">wled-google-home-bridge</text>
+  <text x="608" y="154" text-anchor="middle" class="sans" font-size="10.5" fill="#8b949e">Node.js 22 · TypeScript · Fastify · Docker</text>
+
+  <!-- Sub-module 3A -->
+  <rect x="500" y="166" width="216" height="68" rx="6" fill="#0d1117" stroke="#30363d"/>
+  <text x="512" y="185" class="sans" font-size="11.5" font-weight="700" fill="#79c0ff">Embedded OAuth 2.0 Engine</text>
+  <text x="512" y="202" class="mono" font-size="9.5" fill="#c9d1d9">/oauth/authorize · /oauth/token</text>
+  <text x="512" y="219" class="sans" font-size="10" fill="#8b949e">Stateless HMAC-SHA256 · Login rate-limit</text>
+
+  <!-- Sub-module 3B -->
+  <rect x="500" y="242" width="216" height="68" rx="6" fill="#0d1117" stroke="#30363d"/>
+  <text x="512" y="261" class="sans" font-size="11.5" font-weight="700" fill="#7ee787">Smart Home Fulfillment</text>
+  <text x="512" y="278" class="mono" font-size="9.5" fill="#c9d1d9">POST /smarthome</text>
+  <text x="512" y="295" class="sans" font-size="10" fill="#8b949e">OnOff · Brightness · RGB · 18 Effects</text>
+
+  <!-- Sub-module 3C -->
+  <rect x="500" y="318" width="216" height="68" rx="6" fill="#0d1117" stroke="#30363d"/>
+  <text x="512" y="337" class="sans" font-size="11.5" font-weight="700" fill="#d2a8ff">REST &amp; Webhook Gateway (Zod)</text>
+  <text x="512" y="354" class="mono" font-size="9.5" fill="#c9d1d9">/api/v1/wled/:device/* · /health</text>
+  <text x="512" y="371" class="sans" font-size="10" fill="#8b949e">Power · Color · Preset · Raw JSON</text>
+
+  <!-- Footer bar inside Card 3 -->
+  <text x="608" y="408" text-anchor="middle" class="mono" font-size="10" fill="#ffa657">WledClient · 3000ms AbortSignal</text>
+
+  <!-- Arrows: Bridge -> ESP32 Strips -->
+  <path d="M 730 270 L 750 270 L 750 165 L 766 165" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+  <path d="M 730 270 L 766 270" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+  <path d="M 750 270 L 750 375 L 766 375" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+
+  <!-- Card 4A: ESP32 desk -->
+  <rect x="768" y="122" width="168" height="86" rx="8" fill="#161b22" stroke="#3fb950" stroke-width="1.2"/>
+  <rect x="769" y="123" width="166" height="4" rx="2" fill="url(#ledStrip)"/>
+  <text x="780" y="148" class="sans" font-size="12" font-weight="700" fill="#f0f6fc">ESP32 — "desk"</text>
+  <text x="780" y="167" class="mono" font-size="10.5" fill="#7ee787">192.168.1.100</text>
+  <text x="780" y="185" class="mono" font-size="9.5" fill="#8b949e">/json/state · /json/info</text>
+
+  <!-- Card 4B: ESP32 lamp -->
+  <rect x="768" y="227" width="168" height="86" rx="8" fill="#161b22" stroke="#3fb950" stroke-width="1.2"/>
+  <rect x="769" y="228" width="166" height="4" rx="2" fill="url(#ledStrip)"/>
+  <text x="780" y="253" class="sans" font-size="12" font-weight="700" fill="#f0f6fc">ESP32 — "lamp"</text>
+  <text x="780" y="272" class="mono" font-size="10.5" fill="#7ee787">192.168.1.101</text>
+  <text x="780" y="290" class="mono" font-size="9.5" fill="#8b949e">WLED v0.14+ / 16.x</text>
+
+  <!-- Card 4C: ESP32 extensible -->
+  <rect x="768" y="332" width="168" height="86" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="780" y="357" class="sans" font-size="12" font-weight="700" fill="#c9d1d9">ESP32 — "&lt;device&gt;"</text>
+  <text x="780" y="376" class="mono" font-size="10.5" fill="#8b949e">192.168.1.XXX</text>
+  <text x="780" y="394" class="sans" font-size="10" fill="#8b949e">Add via WLED_DEVICES</text>
+
+  <!-- Bottom Security Legend -->
+  <text x="28" y="474" class="sans" font-size="11" fill="#8b949e">
+    <tspan font-weight="700" fill="#c9d1d9">Security boundaries:</tspan>
+    <tspan dx="10" fill="#79c0ff">●</tspan> OAuth2 Bearer (/smarthome)
+    <tspan dx="10" fill="#d2a8ff">●</tspan> Shared secret x-relay-token (/api/v1/*)
+    <tspan dx="10" fill="#3fb950">●</tspan> Hard 3s LAN circuit-breaker (no hung sockets)
+  </text>
+</svg>

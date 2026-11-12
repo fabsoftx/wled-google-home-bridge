@@ -1,0 +1,36 @@
+{
+  "name": "wled-google-home-bridge",
+  "version": "1.0.0",
+  "description": "Self-hosted WLED webhook relay and native Google Smart Home Cloud-to-Cloud bridge",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabsoftx/wled-google-home-bridge.git"
+  },
+  "homepage": "https://github.com/fabsoftx/wled-google-home-bridge#readme",
+  "bugs": {
+    "url": "https://github.com/fabsoftx/wled-google-home-bridge/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "tsx watch src/server.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "fastify": "^5.1.0",
+    "pino": "^9.5.0",
+    "pino-pretty": "^13.0.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}

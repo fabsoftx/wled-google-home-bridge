@@ -1,3 +1,5 @@
+![Fabsoft](docs/Fabsoft%20Ex%20Profile%20Photo.webp)
+
 # Fabsoft WLED Google Home Bridge
 
 A resilient, self-hosted Node.js/TypeScript microservice that bridges external
@@ -163,3 +165,9 @@ curl -H "$H" -X POST http://localhost:3080/api/v1/wled/desk/power \
 ## License
 
 [MIT](LICENSE)
+
+## Attribution
+
+Architected by [**Idris Fabiyi Snr**](https://fabiyi.com) — Senior Software Architect
+
+[**Fabs Group**](https://thefabsgroup.co.uk) ([thefabsgroup.co.uk](https://thefabsgroup.co.uk))

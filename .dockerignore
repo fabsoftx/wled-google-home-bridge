@@ -5,3 +5,6 @@ dist
 logs
 *.log
 .git
+.github
+docs
+README.md

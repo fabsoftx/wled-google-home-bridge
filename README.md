@@ -2,6 +2,12 @@
 
 # Fabsoft WLED Google Home Bridge
 
+[![CI](https://github.com/fabsoftx/wled-google-home-bridge/actions/workflows/ci.yml/badge.svg)](https://github.com/fabsoftx/wled-google-home-bridge/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Node.js](https://img.shields.io/badge/Node.js-%3E%3D20-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)](Dockerfile)
+
 A resilient, self-hosted Node.js/TypeScript microservice that bridges external
 triggers (native Google Smart Home Cloud-to-Cloud, Cloudflare Tunnel webhooks,
 automation engines, and custom dashboards) to one or more ESP32 strips running
@@ -170,4 +176,4 @@ curl -H "$H" -X POST http://localhost:3080/api/v1/wled/desk/power \
 
 Architected by [**Idris Fabiyi Snr**](https://fabiyi.com) — Senior Software Architect
 
-[**Fabs Group**](https://thefabsgroup.co.uk) ([thefabsgroup.co.uk](https://thefabsgroup.co.uk))
+An open-source [**Fabsoft X**](https://github.com/fabsoftx) project · [**Fabs Group**](https://thefabsgroup.co.uk) ([thefabsgroup.co.uk](https://thefabsgroup.co.uk))
